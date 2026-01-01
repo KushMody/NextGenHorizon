@@ -1,0 +1,294 @@
+{
+    "header": {
+        "companyName": "NextGen Horizons Consultancy LLP",
+        "shortName": "NextGen Horizons",
+        "logoAlt": "NH Company Logo",
+        "navLinks": [
+            {
+                "label": "Home",
+                "path": "#home"
+            },
+            {
+                "label": "About",
+                "path": "#about"
+            },
+            {
+                "label": "Services",
+                "path": "#services"
+            },
+            {
+                "label": "Contact",
+                "path": "#contact"
+            }
+        ]
+    },
+    "hero": {
+        "badge": "PROFESSIONAL EXCELLENCE",
+        "title": {
+            "line1": "MANAGEMENT",
+            "line2": "CONSULTANCY",
+            "line3": "SERVICES"
+        },
+        "description": "Transform your business with expert strategic guidance. We provide comprehensive management consulting solutions tailored to your unique challenges and goals.",
+        "buttons": {
+            "primary": {
+                "label": "Get Started Today",
+                "link": "#contact"
+            },
+            "secondary": {
+                "label": "Our Services",
+                "link": "#services"
+            }
+        },
+        "stats": [
+            {
+                "value": "50+",
+                "label": "Projects Completed"
+            },
+            {
+                "value": "5+",
+                "label": "Years Experience"
+            },
+            {
+                "value": "98%",
+                "label": "Client Satisfaction"
+            }
+        ],
+        "floatingCards": [
+            {
+                "label": "Success Rate",
+                "value": "98%",
+                "icon": "success"
+            },
+            {
+                "label": "Growth Rate",
+                "value": "+150%",
+                "icon": "growth"
+            }
+        ]
+    },
+    "features": {
+        "title": "Why Choose Us",
+        "items": [
+            {
+                "title": "Success Rate",
+                "description": "98% client satisfaction across all projects.",
+                "className": "col-span-1 md:col-span-2 bg-gradient-to-br from-zinc-900 to-zinc-900/50",
+                "delay": 0.1
+            },
+            {
+                "title": "Growth",
+                "description": "+150% growth rate for our partners.",
+                "className": "col-span-1 md:col-span-1",
+                "delay": 0.2
+            },
+            {
+                "title": "Experience",
+                "description": "5+ years of dedicated professional service.",
+                "className": "col-span-1 md:col-span-1",
+                "delay": 0.3
+            },
+            {
+                "title": "Projects",
+                "description": "Over 50+ projects completed successfully.",
+                "className": "col-span-1 md:col-span-2",
+                "delay": 0.4
+            }
+        ]
+    },
+    "portfolio": {
+        "sectionTitle": "WORKS",
+        "sectionSubtitle": "DRAG TO EXPLORE",
+        "projects": [
+            {
+                "title": "Consultancy One",
+                "year": "2024",
+                "image": "linear-gradient(45deg, #111, #333)"
+            },
+            {
+                "title": "Strategy Beta",
+                "year": "2024",
+                "image": "linear-gradient(135deg, #222, #444)"
+            },
+            {
+                "title": "Growth Gamma",
+                "year": "2023",
+                "image": "linear-gradient(90deg, #1a1a1a, #3a3a3a)"
+            },
+            {
+                "title": "Finance Delta",
+                "year": "2023",
+                "image": "linear-gradient(180deg, #111, #2d2d2d)"
+            },
+            {
+                "title": "Market Epsilon",
+                "year": "2022",
+                "image": "linear-gradient(60deg, #000, #333)"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact Details",
+        "office": {
+            "title": "Our Office",
+            "addressLines": [
+                "221, Sai Vittorio,",
+                "BOpp Atlanta Shopping Mall,",
+                "Althan Bhimrad Road,",
+                "Surat - 395017"
+            ],
+            "mapLink": "https://maps.app.goo.gl/Hv6csc6BrLq9NSzLA"
+        },
+        "phone": {
+            "title": "Call or WhatsApp",
+            "numbers": [
+                {
+                    "label": "+91 7777991104",
+                    "link": "https://wa.me/917777991104"
+                },
+                {
+                    "label": "+91 6352331441",
+                    "link": "https://wa.me/916352331441"
+                }
+            ]
+        },
+        "email": {
+            "title": "Email Us",
+            "address": "nextgenhorizon@outlook.com",
+            "link": "mailto:nextgenhorizon@outlook.com"
+        }
+    },
+    "about": {
+        "title": "Our Team",
+        "teamMembers": [
+            {
+                "name": "Harsh Gheewala",
+                "title": "ACA, B.com, Research Analyst (NISM)",
+                "bio": "Harsh has been involved in the audit of a wide variety of clients and industries, with specific focus on Taxation and audits. His professional work has been in Statutory and Tax audits and Internal audits. He also has good experience in all types of Bank audits like Statutory audit, Concurrent audits and Stock audits. He also has experience in Project finance and project reconciliation related engagements. Previously, he has worked as an Audit senior in Statutory audit department with BDO Oman."
+            },
+            {
+                "name": "Nidhi Mody",
+                "title": "ACMA, DISSA, B.com",
+                "bio": "Nidhi has been involved in the audit of a wide variety of clients and industries, with specific focus on Costing and GST. Her professional work has been in Cost audits, Bank audits and GST compliances. She also has on-going experience in providing specific MIS reporting and functional support for ERP implementation in companies. She also has experience in pricing decision for various clients and industries. Previously, she has worked as a Business controller with Sterlite Copper, Vedanta Limited."
+            }
+        ],
+        "industryTitle": "Industry Segments",
+        "industrySubtitle": "List of Industry segments for major clients",
+        "industries": [
+            "Textile Industry",
+            "Diamond Industry",
+            "Solar Power Industry",
+            "Flex Industry",
+            "Lab testing service providers",
+            "Hospitality Industry",
+            "Healthcare & many more"
+        ],
+        "locationTitle": "Geographical Coverage",
+        "locations": {
+            "domestic": {
+                "title": "Within India",
+                "list": [
+                    "Gujarat",
+                    "Maharastra",
+                    "Karnataka",
+                    "Telangana"
+                ]
+            },
+            "international": {
+                "title": "International",
+                "list": [
+                    "Oman",
+                    "UAE"
+                ]
+            }
+        }
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "What We Offer",
+        "description": "At NEXTGEN HORIZON CONSULTANTS, we offer a wide range of professional accounting services. From tax preparation to financial consulting, our dedicated team is here to assist you every step of the way.",
+        "categories": [
+            {
+                "title": "Audit & Assurance",
+                "items": [
+                    "Statutory audit",
+                    "Tax audit",
+                    "Cost audit",
+                    "Bank Concurrent audit",
+                    "Stock audit",
+                    "Revenue audit"
+                ]
+            },
+            {
+                "title": "Risk Advisory",
+                "items": [
+                    "Internal audit",
+                    "Internal Financial Controls",
+                    "Compliance audit"
+                ]
+            },
+            {
+                "title": "Business Support Services",
+                "items": [
+                    "Company & LLP formation",
+                    "Accounting and bookkeeping services also cloud based maintenance of accounts",
+                    "Cost record maintenance",
+                    "Costing MIS",
+                    "ERP development and implementation",
+                    "Design and implementation of SOP",
+                    "Payroll compliance",
+                    "Fixed asset management"
+                ]
+            },
+            {
+                "title": "Consulting",
+                "items": [
+                    "Cost of production evaluation",
+                    "Pricing decision",
+                    "Budget - Planning, monitoring and analysis",
+                    "Subsidy and incentives"
+                ]
+            },
+            {
+                "title": "Taxation",
+                "items": [
+                    "Tax advisory",
+                    "Corporate taxation",
+                    "Individual and partnership taxation",
+                    "Departmental scrutiny and assessments proceedings",
+                    "TDS compliances and filings",
+                    "GST registration",
+                    "GST - Compliances and return filings",
+                    "Refunds"
+                ]
+            },
+            {
+                "title": "Project Finance",
+                "items": [
+                    "Ascertaining financial needs and structuring",
+                    "Preparation of Detailed Project Reports (DPR)",
+                    "Preparation of CMA reports",
+                    "Liasoning and coordinating with banks"
+                ]
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© 2024 NextGen Horizons Consultancy LLP. All rights reserved.",
+        "links": [
+            {
+                "label": "Twitter",
+                "link": "#"
+            },
+            {
+                "label": "LinkedIn",
+                "link": "#"
+            },
+            {
+                "label": "Github",
+                "link": "#"
+            }
+        ],
+        "endText": "THE END"
+    }
+}

@@ -1,109 +1,80 @@
+import { motion } from 'framer-motion';
+import RevealText from '../components/ui/RevealText';
+import content from '../data/content.json';
+
 function ServicesPage() {
-    const services = [
-        {
-            title: "Audit & Assurance",
-            items: [
-                "Statutory audit",
-                "Tax audit",
-                "Cost audit",
-                "Bank Concurrent audit",
-                "Stock audit",
-                "Revenue audit"
-            ]
-        },
-        {
-            title: "Risk Advisory",
-            items: [
-                "Internal audit",
-                "Internal Financial Controls",
-                "Compliance audit"
-            ]
-        },
-        {
-            title: "Business Support Services",
-            items: [
-                "Company & LLP formation",
-                "Accounting and bookkeeping services also cloud based maintenance of accounts",
-                "Cost record maintenance",
-                "Costing MIS",
-                "ERP development and implementation",
-                "Design and implementation of SOP",
-                "Payroll compliance",
-                "Fixed asset management"
-            ]
-        },
-        {
-            title: "Consulting",
-            items: [
-                "Cost of production evaluation",
-                "Pricing decision",
-                "Budget - Planning, monitoring and analysis",
-                "Subsidy and incentives"
-            ]
-        },
-        {
-            title: "Taxation",
-            items: [
-                "Tax advisory",
-                "Corporate taxation",
-                "Individual and partnership taxation",
-                "Departmental scrutiny and assessments proceedings",
-                "TDS compliances and filings",
-                "GST registration",
-                "GST - Compliances and return filings",
-                "Refunds"
-            ]
-        },
-        {
-            title: "Project Finance",
-            items: [
-                "Ascertaining financial needs and structuring",
-                "Preparation of Detailed Project Reports (DPR)",
-                "Preparation of CMA reports",
-                "Liasoning and coordinating with banks"
-            ]
+    const { services } = content;
+    const { categories } = services;
+
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
         }
-    ];
+    };
+
+    const item = {
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0 }
+    };
 
     return (
-        <div>
+        <div id="services">
             {/* Header Section */}
-            <section className="text-center pt-35 pb-10 px-5">
-                <h1 className="text-5xl mb-5">Our Services</h1>
+            <section className="text-center pt-35 pb-16 px-5 relative z-10 bg-white">
+                <div className="mb-6 flex justify-center">
+                    <RevealText text={services.title} className="text-5xl font-serif font-bold tracking-tight text-gray-900" />
+                </div>
                 <div className="max-w-4xl mx-auto">
-                    <div className="flex flex-col md:flex-row justify-between items-start gap-8 mt-10 mb-12">
-                        <h2 className="text-2xl font-semibold text-amber-600">What We Offer</h2>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="flex flex-col md:flex-row justify-between items-start gap-10 mt-8 mb-12"
+                    >
+                        <h2 className="text-2xl font-bold text-[#c89434] font-serif shrink-0">{services.subtitle}</h2>
                         <div className="md:w-2/3 text-left">
-                            <p className="text-lg text-gray-700">
-                                At NEXTGEN HORIZON CONSULTANTS, we offer a wide range of professional accounting services.
-                                From tax preparation to financial consulting, our dedicated team is here to assist you every step of the way.
+                            <p className="text-lg text-gray-600 font-light leading-relaxed">
+                                {services.description}
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Services Grid */}
-            <section className="py-12 px-5 bg-gray-50">
+            <section className="py-20 px-5 bg-gray-50 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {services.map((service, index) => (
-                            <div
+                    <motion.div
+                        variants={container}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
+                        {categories.map((service, index) => (
+                            <motion.div
+                                variants={item}
                                 key={index}
-                                className="bg-white border-t-4 border-yellow-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-96"
+                                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                                className="group relative bg-white border border-gray-100 p-8 rounded-sm hover:border-[#c89434] transition-colors duration-300 hover:shadow-2xl hover:shadow-[#c89434]/10 min-h-96 overflow-hidden"
                             >
-                                <h3 className="text-2xl font-bold mb-4 text-amber-600">{service.title}</h3>
-                                <ul className="space-y-2">
+                                <h3 className="text-2xl font-bold mb-6 text-gray-900 font-serif group-hover:text-[#c89434] transition-colors">{service.title}</h3>
+                                <ul className="space-y-3 relative z-10">
                                     {service.items.map((item, itemIndex) => (
-                                        <li key={itemIndex} className="text-gray-700 flex items-start">
-                                            <span className="text-amber-600 mr-2">•</span>
-                                            <span className="text-sm">{item}</span>
+                                        <li key={itemIndex} className="text-gray-600 flex items-start group-hover:text-gray-800 transition-colors">
+                                            <span className="text-[#c89434] mr-3 mt-1.5 text-xs">◆</span>
+                                            <span className="text-sm tracking-wide leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </div>

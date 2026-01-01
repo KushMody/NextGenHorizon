@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import logo from '../assets/logo.png';
+import content from '../data/content.json';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { header } = content;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,90 +14,73 @@ function Header() {
     setIsMenuOpen(false);
   };
 
+  const scrollToSection = (e, path) => {
+    e.preventDefault();
+    const element = document.querySelector(path);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      closeMenu();
+    }
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-      <div className="flex items-center justify-between py-3 px-4 md:py-5 md:px-[10%]">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 transition-all duration-300 shadow-sm">
+      <div className="flex items-center justify-between py-4 px-4 md:px-[10%]">
         {/* Logo */}
-        <NavLink to="/" className="flex items-center space-x-2 flex-shrink-0" onClick={closeMenu}>
-          <img src={logo} alt="NH Company Logo" className="h-8 md:h-10" />
-          
+        <a href="#home" className="flex items-center space-x-3 flex-shrink-0 group" onClick={(e) => scrollToSection(e, '#home')}>
+          <img src={logo} alt={header.logoAlt} className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+
           {/* Large screens - single line */}
           <span
-            className="text-lg md:text-2xl font-bold tracking-wide hidden lg:block"
-            style={{ color: '#c89434' }}
+            className="text-lg md:text-2xl font-serif font-bold tracking-wide hidden lg:block text-gray-900"
           >
-            NextGen Horizons Consultancy LLP
+            {header.companyName}
           </span>
 
           {/* Medium screens - two lines */}
           <div className="hidden sm:block lg:hidden">
-            <div className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#c89434' }}>
-              NextGen Horizons
+            <div className="text-sm md:text-base font-bold tracking-wide text-gray-900">
+              {header.shortName}
             </div>
-            <div className="text-sm md:text-base font-bold tracking-wide leading-tight" style={{ color: '#c89434' }}>
+            <div className="text-xs md:text-sm font-semibold tracking-wide leading-tight text-[#c89434]">
               Consultancy LLP
             </div>
           </div>
 
           {/* Mobile screens - compact two lines */}
           <div className="block sm:hidden">
-            <div className="text-xs font-semibold tracking-wide" style={{ color: '#c89434' }}>
-              NextGen Horizons
+            <div className="text-sm font-bold tracking-wide text-gray-900">
+              {header.shortName}
             </div>
-            <div className="text-xs font-semibold tracking-wide leading-tight" style={{ color: '#c89434' }}>
+            <div className="text-[10px] font-semibold tracking-wide leading-tight text-[#c89434]">
               Consultancy LLP
             </div>
           </div>
-        </NavLink>
+        </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `mx-4 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-500'
-              }`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `mx-4 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-500'
-              }`
-            }
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `mx-4 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-500'
-              }`
-            }
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `mx-4 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-500'
-              }`
-            }
-          >
-            Contact
-          </NavLink>
+        <nav className="hidden md:flex items-center">
+          {header.navLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.path}
+              className="mx-5 font-medium text-sm tracking-widest uppercase no-underline transition-all duration-300 text-gray-600 hover:text-[#c89434] relative group"
+              onClick={(e) => scrollToSection(e, link.path)}
+            >
+              {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c89434] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 focus:outline-none"
+          className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 focus:outline-none group"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           <div
-            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2 bg-[#c89434]' : ''
               }`}
           ></div>
           <div
@@ -104,7 +88,7 @@ function Header() {
               }`}
           ></div>
           <div
-            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2 bg-[#c89434]' : ''
               }`}
           ></div>
         </button>
@@ -112,50 +96,20 @@ function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden bg-white border-t border-gray-200 transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        className={`md:hidden bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}
       >
-        <nav className="flex flex-col py-4">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `px-6 py-3 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600 bg-amber-50' : 'text-gray-800 hover:text-amber-500 hover:bg-gray-50'
-              }`
-            }
-            onClick={closeMenu}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `px-6 py-3 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600 bg-amber-50' : 'text-gray-800 hover:text-amber-500 hover:bg-gray-50'
-              }`
-            }
-            onClick={closeMenu}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `px-6 py-3 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600 bg-amber-50' : 'text-gray-800 hover:text-amber-500 hover:bg-gray-50'
-              }`
-            }
-            onClick={closeMenu}
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `px-6 py-3 font-bold no-underline transition-colors duration-200 ${isActive ? 'text-amber-600 bg-amber-50' : 'text-gray-800 hover:text-amber-500 hover:bg-gray-50'
-              }`
-            }
-            onClick={closeMenu}
-          >
-            Contact
-          </NavLink>
+        <nav className="flex flex-col py-2">
+          {header.navLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.path}
+              className="px-8 py-3 font-medium tracking-wide uppercase text-sm no-underline transition-colors duration-200 text-gray-700 hover:text-[#c89434] hover:bg-gray-50 border-1 border-transparent hover:border-l-4 hover:border-l-[#c89434]"
+              onClick={(e) => scrollToSection(e, link.path)}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
