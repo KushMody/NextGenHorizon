@@ -24,10 +24,10 @@ function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 transition-all duration-300 shadow-sm">
-      <div className="flex items-center justify-between py-4 px-4 md:px-[10%]">
+    <header className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 transition-all duration-300 shadow-sm">
+      <div className="flex items-center justify-between py-4 px-4 sm:px-6 md:px-[10%]">
         {/* Logo */}
-        <a href="#home" className="flex items-center space-x-3 flex-shrink-0 group" onClick={(e) => scrollToSection(e, '#home')}>
+        <a href="#home" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 group" onClick={(e) => scrollToSection(e, '#home')}>
           <img src={logo} alt={header.logoAlt} className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
 
           {/* Large screens - single line */}
@@ -42,7 +42,7 @@ function Header() {
             <div className="text-sm md:text-base font-bold tracking-wide text-gray-900">
               {header.shortName}
             </div>
-            <div className="text-xs md:text-sm font-semibold tracking-wide leading-tight text-[#c89434]">
+            <div className="text-xs md:text-sm font-semibold tracking-wide leading-tight text-brand">
               Consultancy LLP
             </div>
           </div>
@@ -52,7 +52,7 @@ function Header() {
             <div className="text-sm font-bold tracking-wide text-gray-900">
               {header.shortName}
             </div>
-            <div className="text-[10px] font-semibold tracking-wide leading-tight text-[#c89434]">
+            <div className="text-[10px] font-semibold tracking-wide leading-tight text-brand">
               Consultancy LLP
             </div>
           </div>
@@ -64,23 +64,23 @@ function Header() {
             <a
               key={index}
               href={link.path}
-              className="mx-5 font-medium text-sm tracking-widest uppercase no-underline transition-all duration-300 text-gray-600 hover:text-[#c89434] relative group"
+              className="mx-3 lg:mx-5 font-medium text-xs lg:text-sm tracking-widest uppercase no-underline transition-all duration-300 text-gray-600 hover:text-brand relative group"
               onClick={(e) => scrollToSection(e, link.path)}
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c89434] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Fixed Position */}
         <button
-          className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 focus:outline-none group"
+          className="md:hidden fixed top-5 right-7 z-50 flex flex-col items-center justify-center w-8 h-8 space-y-1.5 focus:outline-none group"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           <div
-            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2 bg-[#c89434]' : ''
+            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2 bg-brand' : ''
               }`}
           ></div>
           <div
@@ -88,7 +88,7 @@ function Header() {
               }`}
           ></div>
           <div
-            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2 bg-[#c89434]' : ''
+            className={`w-6 h-0.5 bg-gray-800 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2 bg-brand' : ''
               }`}
           ></div>
         </button>
@@ -104,7 +104,7 @@ function Header() {
             <a
               key={index}
               href={link.path}
-              className="px-8 py-3 font-medium tracking-wide uppercase text-sm no-underline transition-colors duration-200 text-gray-700 hover:text-[#c89434] hover:bg-gray-50 border-1 border-transparent hover:border-l-4 hover:border-l-[#c89434]"
+              className="px-8 py-3 font-medium tracking-wide uppercase text-sm no-underline transition-colors duration-200 text-gray-700 hover:text-brand hover:bg-gray-50 border-1 border-transparent hover:border-l-4 hover:border-l-brand"
               onClick={(e) => scrollToSection(e, link.path)}
             >
               {link.label}

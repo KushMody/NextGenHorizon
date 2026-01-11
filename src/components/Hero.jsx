@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform, animate, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from './ui/MagneticButton';
 import content from '../data/content.json';
 
@@ -41,7 +41,7 @@ const Hero = () => {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#c89434]/40 to-transparent origin-left"
+                className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent origin-left"
             />
 
             <motion.div
@@ -52,18 +52,18 @@ const Hero = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="inline-flex px-4 py-1.5 mb-8 border border-[#c89434]/20 rounded-full bg-[#c89434]/5 backdrop-blur-sm"
+                    className="inline-flex px-4 py-1.5 mb-8 border border-brand/20 rounded-full bg-brand/5 backdrop-blur-sm"
                 >
-                    <span className="text-sm font-medium tracking-widest uppercase text-[#c89434]">{hero.badge}</span>
+                    <span className="text-sm font-medium tracking-widest uppercase text-brand">{hero.badge}</span>
                 </motion.div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8 text-gray-900 leading-[1.1]">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8 text-gray-900 leading-[1.1]">
                     <div className="overflow-hidden">
                         <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
                             {hero.title.line1}
                         </motion.div>
                     </div>
-                    <div className="overflow-hidden text-[#c89434] my-2">
+                    <div className="overflow-hidden text-brand my-2">
                         <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}>
                             {hero.title.line2}
                         </motion.div>
@@ -95,7 +95,7 @@ const Hero = () => {
                         onClick={(e) => scrollToSection(e, hero.buttons.primary.link)}
                     >
                         <MagneticButton
-                            className="px-10 py-4 bg-[#c89434] text-white font-medium tracking-wide uppercase rounded-sm text-lg hover:bg-[#b07e28] transition-all shadow-lg shadow-[#c89434]/20 w-full sm:w-auto"
+                            className="px-10 py-4 bg-brand text-white font-medium tracking-wide uppercase rounded-sm text-lg hover:bg-[#b07e28] transition-all shadow-lg shadow-brand/20 w-full sm:w-auto"
                         >
                             {hero.buttons.primary.label}
                         </MagneticButton>
@@ -119,14 +119,14 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 right-10 z-20 flex flex-col items-center gap-3"
+                className="hidden md:flex absolute bottom-10 right-10 z-20 flex-col items-center gap-3"
             >
                 <span className="text-gray-400 text-xs uppercase tracking-[0.2em]">Scroll Down</span>
-                <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-[#c89434] overflow-hidden relative">
+                <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-brand overflow-hidden relative">
                     <motion.div
                         animate={{ y: ["-100%", "100%"] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 bg-[#c89434]"
+                        className="absolute inset-0 bg-brand"
                     />
                 </div>
             </motion.div>

@@ -6,7 +6,7 @@ import ContactPage from './pages/ContactPage.jsx';
 
 function App() {
   return (
-    <div className="bg-gray-50 text-gray-900 min-h-screen selection:bg-[#c89434]/30 selection:text-[#c89434]">
+    <div className="bg-gray-50 text-gray-900 min-h-screen selection:bg-brand/30 selection:text-brand">
       <Header />
       <main>
         <HomePage />
