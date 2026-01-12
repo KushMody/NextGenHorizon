@@ -26,7 +26,11 @@ function ContactFooter() {
   const { contact } = content;
 
   return (
-    <div id="contact" className="min-h-screen flex flex-col relative z-20 bg-white">
+    <div
+      id="contact"
+      className="min-h-[90vh] h-[90vh] flex flex-col relative z-20 bg-white"
+    >
+
       <SEO
         title="Contact Us"
         description="Get in touch with NextGen Horizons for professional consultancy services."
@@ -118,14 +122,6 @@ function ContactFooter() {
         </div>
       </div>
 
-      {/* Copyright Footer */}
-      <footer className="bg-gray-100 border-t border-gray-200 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
-          <p className="text-sm text-gray-500 font-medium tracking-wide">
-            &copy; {new Date().getFullYear()} NextGen Horizons Consultancy LLP. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

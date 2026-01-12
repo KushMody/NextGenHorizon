@@ -6,19 +6,19 @@
         "navLinks": [
             {
                 "label": "Home",
-                "path": "#home"
+                "path": "home"
             },
             {
                 "label": "About",
-                "path": "#about"
+                "path": "about"
             },
             {
                 "label": "Services",
-                "path": "#services"
+                "path": "services"
             },
             {
                 "label": "Contact",
-                "path": "#contact"
+                "path": "contact"
             }
         ]
     },
@@ -33,11 +33,11 @@
         "buttons": {
             "primary": {
                 "label": "Get Started Today",
-                "link": "#contact"
+                "link": "contact"
             },
             "secondary": {
                 "label": "Our Services",
-                "link": "#services"
+                "link": "services"
             }
         },
         "stats": [

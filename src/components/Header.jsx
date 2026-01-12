@@ -14,9 +14,8 @@ function Header() {
     setIsMenuOpen(false);
   };
 
-  const scrollToSection = (e, path) => {
-    e.preventDefault();
-    const element = document.querySelector(path);
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       closeMenu();
@@ -27,7 +26,10 @@ function Header() {
     <header className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 transition-all duration-300 shadow-sm">
       <div className="flex items-center justify-between py-4 px-4 sm:px-6 md:px-[10%]">
         {/* Logo */}
-        <a href="#home" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 group" onClick={(e) => scrollToSection(e, '#home')}>
+        <div
+          onClick={() => scrollToSection('home')}
+          className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 group cursor-pointer"
+        >
           <img src={logo} alt={header.logoAlt} className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
 
           {/* Large screens - single line */}
@@ -56,20 +58,19 @@ function Header() {
               Consultancy LLP
             </div>
           </div>
-        </a>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center">
           {header.navLinks.map((link, index) => (
-            <a
+            <button
               key={index}
-              href={link.path}
-              className="mx-3 lg:mx-5 font-medium text-xs lg:text-sm tracking-widest uppercase no-underline transition-all duration-300 text-gray-600 hover:text-brand relative group"
-              onClick={(e) => scrollToSection(e, link.path)}
+              onClick={() => scrollToSection(link.path)}
+              className="mx-3 lg:mx-5 font-medium text-xs lg:text-sm tracking-widest uppercase bg-transparent border-none cursor-pointer transition-all duration-300 text-gray-600 hover:text-brand relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -101,14 +102,13 @@ function Header() {
       >
         <nav className="flex flex-col py-2">
           {header.navLinks.map((link, index) => (
-            <a
+            <button
               key={index}
-              href={link.path}
-              className="px-8 py-3 font-medium tracking-wide uppercase text-sm no-underline transition-colors duration-200 text-gray-700 hover:text-brand hover:bg-gray-50 border-1 border-transparent hover:border-l-4 hover:border-l-brand"
-              onClick={(e) => scrollToSection(e, link.path)}
+              onClick={() => scrollToSection(link.path)}
+              className="px-8 py-3 w-full text-left font-medium tracking-wide uppercase text-sm bg-transparent border-1 border-transparent transition-colors duration-200 text-gray-700 hover:text-brand hover:bg-gray-50 hover:border-l-4 hover:border-l-brand"
             >
               {link.label}
-            </a>
+            </button>
           ))}
         </nav>
       </div>

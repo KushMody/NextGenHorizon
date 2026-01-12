@@ -16,9 +16,9 @@ const Hero = () => {
 
     const { hero } = content;
 
-    const scrollToSection = (e, path) => {
+    const scrollToSection = (e, id) => {
         e.preventDefault();
-        const element = document.querySelector(path);
+        const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -90,26 +90,26 @@ const Hero = () => {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="flex flex-col sm:flex-row gap-5 justify-center"
                 >
-                    <a
-                        href={hero.buttons.primary.link}
+                    <div
                         onClick={(e) => scrollToSection(e, hero.buttons.primary.link)}
+                        className="cursor-pointer"
                     >
                         <MagneticButton
                             className="px-10 py-4 bg-brand text-white font-medium tracking-wide uppercase rounded-sm text-lg hover:bg-[#b07e28] transition-all shadow-lg shadow-brand/20 w-full sm:w-auto"
                         >
                             {hero.buttons.primary.label}
                         </MagneticButton>
-                    </a>
-                    <a
-                        href={hero.buttons.secondary.link}
+                    </div>
+                    <div
                         onClick={(e) => scrollToSection(e, hero.buttons.secondary.link)}
+                        className="cursor-pointer"
                     >
                         <MagneticButton
                             className="px-10 py-4 bg-transparent border border-gray-900 text-gray-900 font-medium tracking-wide uppercase rounded-sm text-lg hover:bg-gray-900 hover:text-white transition-all w-full sm:w-auto"
                         >
                             {hero.buttons.secondary.label}
                         </MagneticButton>
-                    </a>
+                    </div>
                 </motion.div>
             </motion.div>
 
