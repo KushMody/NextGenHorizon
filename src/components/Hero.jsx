@@ -57,7 +57,7 @@ const Hero = () => {
                     <span className="text-sm font-medium tracking-widest uppercase text-brand">{hero.badge}</span>
                 </motion.div>
 
-                <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8 text-gray-900 leading-[1.1]">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8 text-gray-900 leading-[1.1]">
                     <div className="overflow-hidden">
                         <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
                             {hero.title.line1}
@@ -119,7 +119,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="hidden md:flex absolute bottom-10 right-10 z-20 flex-col items-center gap-3"
+                className="hidden lg:flex absolute bottom-10 right-10 z-20 flex-col items-center gap-3"
             >
                 <span className="text-gray-400 text-xs uppercase tracking-[0.2em]">Scroll Down</span>
                 <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-brand overflow-hidden relative">

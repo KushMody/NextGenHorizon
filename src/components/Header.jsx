@@ -28,9 +28,9 @@ function Header() {
         {/* Logo */}
         <div
           onClick={() => scrollToSection('home')}
-          className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 group cursor-pointer"
+          className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 group cursor-pointer max-w-[70%]"
         >
-          <img src={logo} alt={header.logoAlt} className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+          <img src={logo} alt={header.logoAlt} className="h-8 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
 
           {/* Large screens - single line */}
           <span
@@ -50,11 +50,11 @@ function Header() {
           </div>
 
           {/* Mobile screens - compact two lines */}
-          <div className="block sm:hidden">
-            <div className="text-sm font-bold tracking-wide text-gray-900">
+          <div className="block sm:hidden flex-1 min-w-0">
+            <div className="text-sm font-bold tracking-wide text-gray-900 truncate">
               {header.shortName}
             </div>
-            <div className="text-[10px] font-semibold tracking-wide leading-tight text-brand">
+            <div className="text-[10px] font-semibold tracking-wide leading-tight text-brand truncate">
               Consultancy LLP
             </div>
           </div>
@@ -97,7 +97,7 @@ function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        className={`md:hidden bg-white/98 backdrop-blur-md border-t border-gray-100 shadow-xl transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}
       >
         <nav className="flex flex-col py-2">

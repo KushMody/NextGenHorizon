@@ -28,7 +28,7 @@ function ContactFooter() {
   return (
     <div
       id="contact"
-      className="min-h-[90vh] h-[90vh] flex flex-col relative z-20 bg-white"
+      className="min-h-screen flex flex-col relative z-20 bg-white"
     >
 
       <SEO

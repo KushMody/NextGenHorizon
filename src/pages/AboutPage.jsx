@@ -42,7 +42,7 @@ function AboutPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
           >
             {teamMembers.map((member, index) => (
               <motion.div variants={item} key={index} className="group bg-white border border-gray-100 p-6 md:p-10 rounded-sm hover:border-brand/50 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-brand/5 relative overflow-hidden">
@@ -71,7 +71,7 @@ function AboutPage() {
             className="bg-white border-l-4 border-brand p-10 rounded-r-sm shadow-md mb-20 relative overflow-hidden"
           >
             <h3 className="text-3xl mb-6 text-gray-900 font-serif font-bold tracking-tight relative z-10">{about.industrySubtitle}</h3>
-            <ul className="text-lg text-gray-700 leading-relaxed list-disc pl-5 marker:text-brand relative z-10 space-y-3 columns-1 md:columns-2 gap-10">
+            <ul className="text-lg text-gray-700 leading-relaxed list-disc pl-5 marker:text-brand relative z-10 space-y-3 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
               {industries.map((industry, index) => (
                 <li key={index} className="pl-2">{industry}</li>
               ))}
@@ -87,7 +87,7 @@ function AboutPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
           >
             <motion.div variants={item} className="bg-white border border-gray-200 p-10 rounded-sm hover:border-brand transition-all duration-300 group">
               <h3 className="text-3xl mb-8 text-gray-900 font-serif font-bold group-hover:text-brand transition-colors">{locations.domestic.title}</h3>
