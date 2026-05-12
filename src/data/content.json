@@ -137,7 +137,7 @@
                 "Althan Bhimrad Road,",
                 "Surat - 395017"
             ],
-            "mapLink": "https://maps.app.goo.gl/Hv6csc6BrLq9NSzLA"
+            "mapLink": "https://maps.app.goo.gl/RnwitcpGvqS66Q8G8"
         },
         "phone": {
             "title": "Call or WhatsApp",
@@ -274,19 +274,15 @@
         ]
     },
     "footer": {
-        "copyright": "© 2024 NextGen Horizons Consultancy LLP. All rights reserved.",
+        "copyright": "© 2026 NextGen Horizons Consultancy LLP. All rights reserved.",
         "links": [
             {
-                "label": "Twitter",
-                "link": "#"
-            },
-            {
                 "label": "LinkedIn",
-                "link": "#"
+                "link": "https://www.linkedin.com/company/nextgen-horizon-consultants-llp/posts/?feedView=all"
             },
             {
-                "label": "Github",
-                "link": "#"
+                "label": "YouTube",
+                "link": "https://www.youtube.com/@nextgen_horizon"
             }
         ],
         "endText": "THE END"

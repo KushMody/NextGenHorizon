@@ -2,4 +2,70 @@
 
 @theme {
   --color-brand: #c89434;
+  --color-brand-dark: #b07e28;
+  --color-brand-light: #e0b35a;
 }
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply w-[85vw] mx-auto py-24;
+  }
+
+  .page-inner {
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .classic-card {
+    @apply bg-white border border-zinc-200 p-8 rounded-none transition-all duration-500 hover:border-brand/40 hover:shadow-2xl hover:shadow-brand/5;
+  }
+
+  .elegant-border {
+    @apply border border-zinc-200 relative before:absolute before:inset-0 before:border before:border-brand/10 before:-m-1 before:pointer-events-none;
+  }
+
+  .text-reveal {
+    @apply overflow-hidden block;
+  }
+
+  .classic-divider {
+    @apply w-24 h-px bg-brand/30 my-8 mx-auto lg:mx-0;
+  }
+}
+
+@layer utilities {
+  .bg-mesh {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(40, 60%, 50%, 0.03) 0, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(0, 0%, 100%, 0.8) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(40, 60%, 50%, 0.03) 0, transparent 50%);
+  }
+}
+
+/* Accessibility: Keyboard focus ring baseline */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Performance: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -28,107 +28,105 @@ const Hero = () => {
         <section
             id="home"
             ref={ref}
-            className="h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden"
+            className="h-screen w-full flex flex-col items-center justify-between bg-white relative overflow-hidden bg-mesh px-6 text-zinc-900 pt-24 sm:pt-32 pb-8 sm:pb-12"
         >
-            {/* Background Pattern - Parallax Layer */}
-            <motion.div
-                style={{ y: y2 }}
-                className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-            />
-
-            {/* Animated Gold Line */}
-            <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent origin-left"
-            />
+            {/* Elegant Background Accents */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-50">
+                <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand/5 blur-[120px] rounded-full animate-pulse" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-brand/3 blur-[100px] rounded-full" />
+                <div className="absolute top-[20%] left-[10%] w-[1px] h-[40%] bg-gradient-to-b from-brand/0 via-brand/20 to-brand/0" />
+            </div>
 
             <motion.div
                 style={{ y: y1, opacity }}
-                className="z-20 text-center px-4 relative max-w-5xl mx-auto"
+                className="z-20 text-center relative max-w-5xl mx-auto flex flex-col items-center justify-center flex-grow"
             >
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="inline-flex px-4 py-1.5 mb-8 border border-brand/20 rounded-full bg-brand/5 backdrop-blur-sm"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1 }}
+                    className="inline-flex items-center space-x-3 px-4 py-1.5 mb-6 border border-zinc-200 bg-white/80 backdrop-blur-md shadow-sm"
                 >
-                    <span className="text-sm font-medium tracking-widest uppercase text-brand">{hero.badge}</span>
+                    <div className="w-6 h-[1px] bg-brand" />
+                    <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-zinc-500">{hero.badge}</span>
+                    <div className="w-6 h-[1px] bg-brand" />
                 </motion.div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8 text-gray-900 leading-[1.1]">
-                    <div className="overflow-hidden">
-                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
+                <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tighter mb-4 sm:mb-6 text-zinc-900 leading-[0.95] flex flex-col items-center">
+                    <span className="overflow-hidden inline-block py-1">
+                        <motion.span
+                            initial={{ y: "110%" }} animate={{ y: 0 }}
+                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                            className="inline-block px-2"
+                        >
                             {hero.title.line1}
-                        </motion.div>
-                    </div>
-                    <div className="overflow-hidden text-brand my-2">
-                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}>
+                        </motion.span>
+                    </span>
+                    <span className="overflow-hidden inline-block text-brand italic py-1">
+                        <motion.span
+                            initial={{ y: "110%" }} animate={{ y: 0 }}
+                            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="inline-block"
+                        >
                             {hero.title.line2}
-                        </motion.div>
-                    </div>
-                    <div className="overflow-hidden">
-                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}>
+                        </motion.span>
+                    </span>
+                    <span className="overflow-hidden inline-block py-1">
+                        <motion.span
+                            initial={{ y: "110%" }} animate={{ y: 0 }}
+                            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                            className="inline-block px-2"
+                        >
                             {hero.title.line3}
-                        </motion.div>
-                    </div>
+                        </motion.span>
+                    </span>
                 </h1>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
-                    className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-12 font-light leading-relaxed"
+                    transition={{ delay: 0.6, duration: 1 }}
+                    className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto mb-10 font-light leading-relaxed tracking-wide px-8 opacity-80"
                 >
                     {hero.description}
                 </motion.p>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-5 justify-center"
+                    transition={{ delay: 0.8, duration: 1 }}
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-16 w-full px-2 sm:px-0"
                 >
-                    <div
-                        onClick={(e) => scrollToSection(e, hero.buttons.primary.link)}
-                        className="cursor-pointer"
-                    >
-                        <MagneticButton
-                            className="px-10 py-4 bg-brand text-white font-medium tracking-wide uppercase rounded-sm text-lg hover:bg-[#b07e28] transition-all shadow-lg shadow-brand/20 w-full sm:w-auto"
-                        >
+                    <div onClick={(e) => scrollToSection(e, hero.buttons.primary.link)} className="w-full sm:w-auto">
+                        <MagneticButton className="px-10 py-4 bg-zinc-900 text-white font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:bg-brand shadow-2xl border border-zinc-900 text-[10px]">
                             {hero.buttons.primary.label}
                         </MagneticButton>
                     </div>
-                    <div
-                        onClick={(e) => scrollToSection(e, hero.buttons.secondary.link)}
-                        className="cursor-pointer"
-                    >
-                        <MagneticButton
-                            className="px-10 py-4 bg-transparent border border-gray-900 text-gray-900 font-medium tracking-wide uppercase rounded-sm text-lg hover:bg-gray-900 hover:text-white transition-all w-full sm:w-auto"
-                        >
+                    <div onClick={(e) => scrollToSection(e, hero.buttons.secondary.link)} className="w-full sm:w-auto">
+                        <MagneticButton className="px-10 py-4 bg-transparent border border-zinc-200 text-zinc-900 font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:border-brand hover:text-brand text-[10px]">
                             {hero.buttons.secondary.label}
                         </MagneticButton>
                     </div>
                 </motion.div>
             </motion.div>
 
-            {/* Scroll indicator */}
+            {/* Premium Stats Dashboard - Fills the viewport width */}
             <motion.div
-                style={{ opacity }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="hidden lg:flex absolute bottom-10 right-10 z-20 flex-col items-center gap-3"
+                className="w-full max-w-7xl mx-auto hidden sm:grid grid-cols-3 border-t border-zinc-100 pt-8 z-20"
             >
-                <span className="text-gray-400 text-xs uppercase tracking-[0.2em]">Scroll Down</span>
-                <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-brand overflow-hidden relative">
-                    <motion.div
-                        animate={{ y: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 bg-brand"
-                    />
-                </div>
+                {hero.stats.map((stat, i) => (
+                    <div key={i} className="text-center group border-r last:border-0 border-zinc-50 px-4">
+                        <div className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-zinc-900 group-hover:text-brand transition-colors">
+                            {stat.value}
+                        </div>
+                        <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400 mt-2">
+                            {stat.label}
+                        </div>
+                    </div>
+                ))}
             </motion.div>
         </section>
     );
