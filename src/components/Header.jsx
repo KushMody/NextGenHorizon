@@ -52,10 +52,9 @@ function Header() {
 
   return (
     <header className={`fixed left-0 right-0 z-50 flex justify-center w-full transition-all duration-[600ms] ease-in-out ${isScrolled ? 'top-0 md:top-6 px-0 md:px-6' : 'top-0 px-0'}`}>
-      <div className={`w-full transition-all duration-[600ms] ease-in-out overflow-hidden mx-auto flex flex-col ${
-          isScrolled 
-            ? 'max-w-5xl rounded-none md:rounded-[40px] bg-white/95 backdrop-blur-2xl border border-zinc-300 shadow-xl' 
-            : 'max-w-[100vw] rounded-none bg-white/95 backdrop-blur-md shadow-md border-b border-zinc-200'
+      <div className={`w-full transition-all duration-[600ms] ease-in-out overflow-hidden mx-auto flex flex-col ${isScrolled
+        ? 'max-w-5xl rounded-none md:rounded-[40px] bg-white/95 backdrop-blur-2xl border border-zinc-300 shadow-xl'
+        : 'max-w-[100vw] rounded-none bg-white/95 backdrop-blur-md shadow-md border-b border-zinc-200'
         }`}
       >
         <div className={`flex items-center justify-between w-full transition-all duration-[600ms] ease-in-out px-6 md:px-12 ${isScrolled ? 'py-3' : 'py-5'}`}>

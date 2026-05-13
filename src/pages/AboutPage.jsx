@@ -114,7 +114,7 @@ function AboutPage() {
                       rotateX: mousePos.y * 0.1,
                       rotateY: mousePos.x * (isFirst ? 0.1 : -0.1),
                     }}
-                    className={`bg-white p-8 lg:p-10 shadow-2xl shadow-zinc-200/50 border flex flex-col group relative transition-colors duration-500 ${isActive ? "lg:flex-row gap-12 lg:gap-16 lg:cursor-pointer hover:bg-zinc-50/50 lg:border-zinc-300" : "h-full border-zinc-100"
+                    className={`bg-white p-8 lg:p-10 shadow-2xl shadow-zinc-200/50 border flex flex-col group relative transition-colors duration-500 ${isActive ? `${isFirst ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 lg:cursor-pointer hover:bg-zinc-50/50 lg:border-zinc-300` : "h-full border-zinc-100"
                       }`}
                   >
                     {/* Subtle Click-to-Close Hint (Desktop Only) */}
