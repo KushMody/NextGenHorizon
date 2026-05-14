@@ -84,9 +84,9 @@ const HomePage = () => {
                     height={750}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-brand/5 group-hover:bg-transparent transition-colors duration-700" />
+                  <div className="absolute inset-0 bg-brand/5" />
                 </div>
 
                 {/* Elegant Floating Element */}

@@ -135,9 +135,9 @@ function AboutPage() {
                       : "p-8 lg:p-10 h-full border-zinc-100"
                       }`}
                   >
-                    {/* Click-to-Close Hint — tied to layoutIndex so it stays visible during fade */}
+                    {/* Click-to-Close Hint — tied to activeIndex so it fades before card shrinks */}
                     <AnimatePresence>
-                      {isLayoutActive && (
+                      {isActive && (
                         <motion.div
                           key="close-hint"
                           initial={{ opacity: 0 }}
@@ -214,9 +214,9 @@ function AboutPage() {
                         )}
                       </AnimatePresence>
 
-                      {/* Signature */}
+                      {/* Signature — uses isActive so it fades OUT before card shrinks */}
                       <AnimatePresence>
-                        {isLayoutActive && (
+                        {isActive && (
                           <motion.div
                             key="signature"
                             initial={{ opacity: 0, x: -20 }}
