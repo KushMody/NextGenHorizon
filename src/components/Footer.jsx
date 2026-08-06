@@ -4,28 +4,24 @@ function Footer() {
     const { footer } = content;
 
     return (
-        <footer className="bg-zinc-50 pt-32 pb-24 px-6 md:px-12 relative overflow-hidden">
-            {/* Smooth Top Gradient Edge */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
-            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none" />
-
+        <footer className="bg-zinc-50 pt-16 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-8 md:px-12 relative overflow-hidden border-t border-zinc-200/80">
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
-                    <div className="text-center md:text-left space-y-4">
-                        <div className="text-3xl font-serif font-bold text-zinc-900 tracking-tighter">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                    <div className="text-center md:text-left space-y-2">
+                        <div className="text-2xl sm:text-3xl font-serif font-bold text-zinc-900 tracking-tight">
                             NextGen <span className="text-brand italic">Horizons</span>
                         </div>
-                        <div className="text-[11px] font-bold tracking-[0.4em] uppercase text-brand">
+                        <div className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-brand">
                             Institutional Consultancy Services
                         </div>
                     </div>
 
-                    <div className="flex items-center space-x-12">
+                    <div className="flex items-center space-x-6 sm:space-x-10">
                         {footer.links.map((link, index) => (
                             <a
                                 key={index}
                                 href={link.link}
-                                className="text-zinc-400 hover:text-brand font-bold text-[10px] tracking-[0.3em] uppercase transition-all"
+                                className="text-zinc-500 hover:text-brand font-bold text-[10px] sm:text-xs tracking-[0.25em] uppercase transition-colors"
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
@@ -35,13 +31,13 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className="w-full h-px bg-zinc-50 mb-10" />
+                <div className="w-full h-px bg-zinc-200/60 mb-8" />
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="text-[10px] text-zinc-700 font-bold tracking-[0.2em] uppercase">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div className="text-[10px] sm:text-xs text-zinc-600 font-medium tracking-wider">
                         {footer.copyright}
                     </div>
-                    <div className="text-[10px] text-brand font-bold tracking-[0.8em] uppercase opacity-50">
+                    <div className="text-[10px] text-brand font-bold tracking-[0.5em] uppercase opacity-70">
                         {footer.endText}
                     </div>
                 </div>
@@ -51,4 +47,5 @@ function Footer() {
 }
 
 export default Footer;
+
 
